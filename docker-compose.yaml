@@ -1,7 +1,7 @@
 wordpress:
-    image: wordpress
+    image: wordpress:latest
     links:
-     - mariadb:mysql
+     - mariadb
     environment:
      - WORDPRESS_DB_PASSWORD=password
      - WORDPRESS_DB_USER=root
@@ -10,7 +10,7 @@ wordpress:
     volumes:
      - ./html:/var/www/html
 mariadb:
-    image: mariadb
+    image: mariadb:latest
     environment:
      - MYSQL_ROOT_PASSWORD=password
      - MYSQL_DATABASE=wordpress
